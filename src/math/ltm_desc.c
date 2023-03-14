@@ -6,7 +6,7 @@
 
 #ifdef LTM_DESC
 
-#include <tommath.h>
+#include <libtommath/tommath.h>
 #if !defined(PRIVATE_MP_WARRAY) && !defined(BN_MP_PRIME_IS_PRIME_C)
 #include <stdbool.h>
 #endif
