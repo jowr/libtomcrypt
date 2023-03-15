@@ -95,6 +95,10 @@ add_library(${PROJECT_NAME}
     ${PRIVATE_HEADERS}
 )
 
+if(BUILD_SHARED_LIBS AND MSVC)
+  target_sources(${PROJECT_NAME} PRIVATE "tomcrypt.def")
+endif()
+
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/headers>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}>
